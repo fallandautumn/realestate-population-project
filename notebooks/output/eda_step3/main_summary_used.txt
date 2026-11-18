@@ -1,0 +1,78 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:               ln_price   R-squared:                       0.642
+Model:                            OLS   Adj. R-squared:                  0.638
+Method:                 Least Squares   F-statistic:                     118.5
+Date:                Mon, 21 Sep 2026   Prob (F-statistic):          2.91e-103
+Time:                        09:27:39   Log-Likelihood:                -3563.6
+No. Observations:                4535   AIC:                             7237.
+Df Residuals:                    4480   BIC:                             7590.
+Df Model:                          54                                         
+Covariance Type:              cluster                                         
+============================================================================================================================
+                                                               coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------------------------------
+Intercept                                                   11.7498      0.267     44.030      0.000      11.223      12.277
+C(age_bin, Treatment(reference='11-15'))[T.1-5]              0.1918      0.025      7.694      0.000       0.143       0.241
+C(age_bin, Treatment(reference='11-15'))[T.6-10]             0.0378      0.027      1.383      0.169      -0.016       0.092
+C(age_bin, Treatment(reference='11-15'))[T.16-20]           -0.0888      0.027     -3.296      0.001      -0.142      -0.036
+C(age_bin, Treatment(reference='11-15'))[T.21-25]           -0.1837      0.033     -5.646      0.000      -0.248      -0.119
+C(age_bin, Treatment(reference='11-15'))[T.26-30]           -0.3318      0.031    -10.688      0.000      -0.393      -0.270
+C(age_bin, Treatment(reference='11-15'))[T.31-40]           -0.5730      0.038    -15.067      0.000      -0.648      -0.498
+C(age_bin, Treatment(reference='11-15'))[T.41+]             -0.7550      0.046    -16.245      0.000      -0.847      -0.663
+C(age_bin, Treatment(reference='11-15'))[T.不明]              -0.3903      0.092     -4.243      0.000      -0.572      -0.209
+C(station_bin, Treatment(reference='11-15'))[T.0-5]          0.1904      0.071      2.692      0.008       0.051       0.330
+C(station_bin, Treatment(reference='11-15'))[T.6-10]         0.1184      0.045      2.637      0.009       0.030       0.207
+C(station_bin, Treatment(reference='11-15'))[T.16-20]       -0.0472      0.036     -1.322      0.188      -0.118       0.023
+C(station_bin, Treatment(reference='11-15'))[T.21-29]       -0.1385      0.046     -3.037      0.003      -0.229      -0.048
+C(station_bin, Treatment(reference='11-15'))[T.30+/不明]      -0.1743      0.054     -3.248      0.001      -0.280      -0.068
+C(land_shape_grp, Treatment(reference='整形系'))[T.台形系]        -0.0869      0.036     -2.386      0.018      -0.159      -0.015
+C(land_shape_grp, Treatment(reference='整形系'))[T.不整形]        -0.1776      0.048     -3.690      0.000      -0.273      -0.083
+C(land_shape_grp, Treatment(reference='整形系'))[T.袋地等]        -0.1931      0.045     -4.336      0.000      -0.281      -0.105
+C(land_shape_grp, Treatment(reference='整形系'))[T.不明]          0.0587      0.024      2.402      0.017       0.010       0.107
+C(structure_grp, Treatment(reference='木造'))[T.非木造]           0.0457      0.039      1.174      0.242      -0.031       0.123
+C(structure_grp, Treatment(reference='木造'))[T.不明]            0.0205      0.085      0.241      0.810      -0.147       0.188
+C(road_bin, Treatment(reference='4-6m未満'))[T.2m未満]          -0.6489      0.083     -7.836      0.000      -0.813      -0.485
+C(road_bin, Treatment(reference='4-6m未満'))[T.2-4m未満]        -0.3218      0.040     -7.984      0.000      -0.401      -0.242
+C(road_bin, Treatment(reference='4-6m未満'))[T.6m以上]           0.1229      0.027      4.587      0.000       0.070       0.176
+C(road_bin, Treatment(reference='4-6m未満'))[T.不明]            -0.0584      0.036     -1.609      0.110      -0.130       0.013
+C(zone_grp, Treatment(reference='住居系'))[T.商業系]               0.1094      0.070      1.564      0.120      -0.029       0.248
+C(zone_grp, Treatment(reference='住居系'))[T.工業系]               0.1853      0.077      2.400      0.018       0.033       0.338
+C(zone_grp, Treatment(reference='住居系'))[T.調整区域]              0.3154      0.166      1.896      0.060      -0.013       0.644
+C(zone_grp, Treatment(reference='住居系'))[T.不明・その他]            0.1587      0.080      1.972      0.050      -0.000       0.318
+C(city, Treatment(reference='横須賀市'))[T.三浦市]                 -0.2109      0.116     -1.813      0.072      -0.441       0.019
+C(city, Treatment(reference='横須賀市'))[T.川崎市多摩区]               0.5199      0.054      9.662      0.000       0.414       0.626
+C(city, Treatment(reference='横須賀市'))[T.川崎市宮前区]               0.6702      0.052     12.782      0.000       0.567       0.774
+C(year_quarter, Treatment(reference='2021Q1'))[T.2021Q2]    -0.0187      0.049     -0.386      0.700      -0.115       0.077
+C(year_quarter, Treatment(reference='2021Q1'))[T.2021Q3]     0.0128      0.049      0.262      0.793      -0.084       0.109
+C(year_quarter, Treatment(reference='2021Q1'))[T.2021Q4]     0.0372      0.048      0.768      0.444      -0.059       0.133
+C(year_quarter, Treatment(reference='2021Q1'))[T.2022Q1]     0.0773      0.048      1.626      0.106      -0.017       0.171
+C(year_quarter, Treatment(reference='2021Q1'))[T.2022Q2]     0.0726      0.046      1.571      0.118      -0.019       0.164
+C(year_quarter, Treatment(reference='2021Q1'))[T.2022Q3]     0.0244      0.063      0.386      0.700      -0.101       0.149
+C(year_quarter, Treatment(reference='2021Q1'))[T.2022Q4]     0.0541      0.062      0.868      0.387      -0.069       0.177
+C(year_quarter, Treatment(reference='2021Q1'))[T.2023Q1]     0.0835      0.050      1.665      0.098      -0.016       0.183
+C(year_quarter, Treatment(reference='2021Q1'))[T.2023Q2]     0.1391      0.052      2.673      0.008       0.036       0.242
+C(year_quarter, Treatment(reference='2021Q1'))[T.2023Q3]     0.0802      0.057      1.397      0.164      -0.033       0.193
+C(year_quarter, Treatment(reference='2021Q1'))[T.2023Q4]     0.0707      0.049      1.457      0.147      -0.025       0.167
+C(year_quarter, Treatment(reference='2021Q1'))[T.2024Q1]     0.1004      0.048      2.079      0.039       0.005       0.196
+C(year_quarter, Treatment(reference='2021Q1'))[T.2024Q2]     0.1556      0.050      3.132      0.002       0.057       0.254
+C(year_quarter, Treatment(reference='2021Q1'))[T.2024Q3]     0.0912      0.056      1.637      0.104      -0.019       0.201
+C(year_quarter, Treatment(reference='2021Q1'))[T.2024Q4]    -0.0055      0.062     -0.089      0.929      -0.128       0.117
+C(year_quarter, Treatment(reference='2021Q1'))[T.2025Q1]     0.1160      0.046      2.526      0.013       0.025       0.207
+C(year_quarter, Treatment(reference='2021Q1'))[T.2025Q2]     0.0351      0.045      0.783      0.435      -0.054       0.124
+C(year_quarter, Treatment(reference='2021Q1'))[T.2025Q3]     0.0185      0.051      0.362      0.718      -0.083       0.120
+C(year_quarter, Treatment(reference='2021Q1'))[T.2025Q4]     0.0302      0.045      0.676      0.500      -0.058       0.119
+C(year_quarter, Treatment(reference='2021Q1'))[T.2026Q1]     0.1358      0.044      3.088      0.002       0.049       0.223
+growth                                                       0.3628      0.107      3.390      0.001       0.151       0.574
+ln_land_area                                                 0.3034      0.062      4.924      0.000       0.182       0.425
+ln_floor_area                                                0.8221      0.077     10.616      0.000       0.669       0.975
+is_chome_exact                                               0.0645      0.106      0.607      0.545      -0.146       0.275
+==============================================================================
+Omnibus:                     1291.963   Durbin-Watson:                   1.872
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            17099.265
+Skew:                          -0.983   Prob(JB):                         0.00
+Kurtosis:                      12.307   Cond. No.                         464.
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)

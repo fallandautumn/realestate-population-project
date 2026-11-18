@@ -1,0 +1,24 @@
+# 機密情報・環境変数
+.env
+
+# 生データ（入手方法は README「2. 対象とデータ」参照。GitHubの100MB制限・容量対策）
+data/
+*.csv
+*.geojson
+*.zip
+# 分析結果の集計CSVは公開する（生データではない）
+!notebooks/output/**/*.csv
+
+# 公開対象外（練習用・調査用・重複ファイル）
+notebooks/practice.ipynb
+sql/debug_*.sql
+outputs/eda_step2_preprocessing.py
+
+# Python・Jupyterキャッシュ
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.vscode/
+
+# DBデータ
+pgdata/

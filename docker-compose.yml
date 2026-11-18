@@ -1,0 +1,47 @@
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: realestate_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./sql:/sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  notebook:
+    build:
+      context: .
+      dockerfile: Dockerfile.notebook
+    container_name: realestate_notebook
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      MLIT_API_KEY: ${MLIT_API_KEY}
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/home/jovyan/work
+    command: >
+      jupyter lab --ip=0.0.0.0 --port=8888 --no-browser
+      --NotebookApp.token='' --NotebookApp.password=''
+
+volumes:
+  pgdata:

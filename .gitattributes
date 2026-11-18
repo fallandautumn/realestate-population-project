@@ -1,0 +1,8 @@
+# 改行コードをリポジトリ内では LF に統一（Windows / コンテナ間の差分ノイズ防止）
+* text=auto
+*.sh text eol=lf
+*.sql text eol=lf
+*.py text eol=lf
+# バイナリ
+*.docx binary
+*.png binary

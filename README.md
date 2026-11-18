@@ -19,7 +19,7 @@
 | EDA Step2（前処理の自動化） | ✅ 完了 | `notebooks/eda_step2_preprocessing.py` |
 | Step3（主モデル + 頑健性チェック） | ✅ 完了 | `notebooks/eda_step3_diagnostics.py`, `notebooks/output/eda_step3/` |
 | レポート（非専門家向けリライト） | ✅ 初版完成 | `outputs/人口減少と戸建住宅価格_検証レポート.docx` |
-| 発展分析（時系列・対象地域拡大） | ⏳ 未着手 | 「6. 今後の課題」参照 |
+
 
 ---
 
